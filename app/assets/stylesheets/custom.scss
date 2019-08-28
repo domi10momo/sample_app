@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 $light-gray: #777;
+$gray-medium-light: #eaeaea;
 
 /* universal */
 
@@ -50,8 +51,7 @@ body {
     line-height: 1.7em;
   }
 
-  /* header */
-
+/* header */
 #logo {
     float: left;
     margin-right: 10px;
@@ -65,10 +65,9 @@ body {
         color: #fff;
         text-decoration: none; 
     }
-  }
+}
 
-  /* footer */
-
+/* footer */
 footer {
     margin-top: 45px;
     padding-top: 5px;
@@ -91,4 +90,19 @@ footer {
             margin-left: 15px;        
         }
     }
+  }
+
+  @mixin box_sizing {
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+  }
+
+  /* miscellaneous */
+  .debug_dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+    @include box_sizing;
   }
