@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
     # &&は取得したユーザが有効かどうかを決定する
     if user && user.authenticate(params[:session][:password])
       #ユーザーログイン後にユーザ情報のページにリダイレクト
+      log_in user
+      redirect_to user
     else
       #エラーメッセージを作成
       flash.now[:danger] = 'Invalid email/password combination'
